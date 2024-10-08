@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функції з необов'язковими параметрами</title>
+    <script>
+        function calculateArea(height, width = 5) {
+            return height * width;
+        }
+
+        function showAreaWithBothParams() {
+            const area = calculateArea(10, 4);
+            document.getElementById('resultBoth').innerText = `Площа з обома параметрами: ${area}`;
+        }
+
+        function showAreaWithDefaultParam() {
+            const area = calculateArea(10);
+            document.getElementById('resultDefault').innerText = `Площа з параметром за замовчуванням: ${area}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Демонстрація функцій з необов'язковими параметрами</h1>
+    <button onclick="showAreaWithBothParams()">Обчислити площу з обома параметрами</button>
+    <p id="resultBoth"></p>
+    
+    <button onclick="showAreaWithDefaultParam()">Обчислити площу з параметром за замовчуванням</button>
+    <p id="resultDefault"></p>
+</body>
+</html>
